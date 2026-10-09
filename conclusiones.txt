@@ -1,0 +1,29 @@
+EJERCICIO
+Automatización E2E de compra en Demoblaze
+
+DATOS DE EJECUCIÓN
+Fecha: 8 de octubre de 2026.
+Resultado: APROBADO.
+Entorno: Windows, Eclipse, Maven, Java y Google Chrome.
+Versiones confirmadas en la ejecución: Serenity BDD 4.1.12 y Chrome 154.0.8037.98.
+
+RESULTADO
+La prueba se ejecutó satisfactoriamente desde Eclipse con JUnit 5 y desde Maven con el comando:
+
+mvn clean verify "-Dit.test=PruebaCompraDemoblaze"
+
+Maven finalizó con BUILD SUCCESS. Se ejecutó una prueba, con una aprobación, cero fallos, cero errores y cero pruebas omitidas. El escenario registró una duración aproximada de 27 segundos según el resumen de Serenity, y se generó el reporte en target/site/serenity/index.html.
+
+VALIDACIONES REALIZADAS
+Se agregaron Samsung galaxy s6 y Sony xperia z5 al carrito y se verificó que ambos productos aparecieran en él. También se comprobó que el total mostrado fuera mayor que cero. Se completó el formulario con datos de prueba y se confirmó la compra mediante la aparición del mensaje "Thank you for your purchase!".
+
+Como evidencia visual de la ejecución se observó el identificador de compra 4340543 y un importe mostrado de 1020 USD. La salida de Maven y el reporte de Serenity respaldan el resultado aprobado del caso automatizado.
+
+INCIDENCIAS OBSERVADAS
+Durante la ejecución aparecieron advertencias de compatibilidad con Chrome DevTools Protocol y avisos relativos al uso de API o agentes de Java por algunas dependencias. Estas advertencias no impidieron ejecutar la prueba ni generar el reporte. No se registraron fallos funcionales en la ejecución reportada.
+
+LIMITACIONES
+La prueba utiliza un sitio público de demostración, dos productos definidos en el código y datos fijos para el formulario. Verifica que los productos estén presentes y que el total sea positivo, pero no comprueba que el importe coincida exactamente con la suma de sus precios. Tampoco valida individualmente la persistencia de los datos ingresados ni un procesamiento real de pagos. El resultado aprobado corresponde al escenario ejecutado y no representa una cobertura completa de la aplicación.
+
+CONCLUSIÓN
+Se cumplió el objetivo del ejercicio mediante una implementación sencilla de Page Object Model con Serenity BDD, JUnit 5 y Selenium WebDriver. El flujo de compra se ejecutó correctamente y generó evidencias verificables desde Eclipse y Maven. Se mantuvo el alcance básico solicitado, con las limitaciones identificadas y sin incorporar complejidad innecesaria para esta prueba técnica.
